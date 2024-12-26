@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { createSingleMovieUrl, createMovieCastUrl, log } from '../helper';
 import SingleMovieStyle from '../styles/SingleMovieStyle.module.css';
+import { constants } from '../env';
 
 const SingleMovie = () => {
 
@@ -72,7 +73,7 @@ const SingleMovie = () => {
 
             <div className={SingleMovieStyle.topSection}>
                 <img
-                src={`${process.env.REACT_APP_MOVIE_IMAGE_BASE_URL}${movie.poster_path}`}
+                src={`${constants.REACT_APP_MOVIE_IMAGE_BASE_URL}${movie.poster_path}`}
                 alt={movie.title}
                 className={SingleMovieStyle.moviePoster}
                 />
@@ -95,7 +96,7 @@ const SingleMovie = () => {
 
         <div className={SingleMovieStyle.rightSection}>
             <img
-            src={`${process.env.REACT_APP_MOVIE_IMAGE_BASE_URL}${movie.backdrop_path}`}
+            src={`${constants.REACT_APP_MOVIE_IMAGE_BASE_URL}${movie.backdrop_path}`}
             alt={movie.title}
             className={SingleMovieStyle.backdropImage}
             />
@@ -108,7 +109,7 @@ const SingleMovie = () => {
             {casts?.map((member, index) => (
             <div key={index} className={SingleMovieStyle.castMember}>
                 <img
-                src={`${process.env.REACT_APP_MOVIE_IMAGE_BASE_URL}${member.profile_path}`}
+                src={`${constants.REACT_APP_MOVIE_IMAGE_BASE_URL}${member.profile_path}`}
                 alt={member.name}
                 className={SingleMovieStyle.castImage}
                 />

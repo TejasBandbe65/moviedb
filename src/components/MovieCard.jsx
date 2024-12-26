@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MovieCardStyle from '../styles/MovieCardStyle.module.css';
+import { constants } from '../env';
 
 const MovieCard = ({movie}) => {
     const navigate = useNavigate();
@@ -11,7 +12,7 @@ const MovieCard = ({movie}) => {
 
   return (
     <div className={MovieCardStyle.card} onClick={navigateToMoviePage}>
-        <img src={`${process.env.REACT_APP_MOVIE_IMAGE_BASE_URL}${movie.poster_path}`} alt={movie.title} />
+        <img src={`${constants.REACT_APP_MOVIE_IMAGE_BASE_URL}${movie.poster_path}`} alt={movie.title} />
         <h3>{movie.title}</h3>
         <p>Rating: {movie.vote_average}</p>
     </div>

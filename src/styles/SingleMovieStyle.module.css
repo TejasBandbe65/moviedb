@@ -1,7 +1,6 @@
 .singleMovieContainer{
     display: flex;
     flex-direction: column;
-    
 }
 
 .singleMovieContainer .top{
